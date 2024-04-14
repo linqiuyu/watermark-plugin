@@ -19,7 +19,6 @@ use YOU_PLUGIN\Support\Facade;
  */
 class Application extends Container {
 	protected array $providers = [
-		ActivateServiceProvider::class,
 		I18nServiceProvider::class,
 	];
 

@@ -4,7 +4,13 @@ namespace YOU_PLUGIN;
 
 use Exception;
 
-class BaseController {
+abstract class BaseController {
+	use StaticCallAbleTrait;
+
+    protected $namespace = '';
+
+    abstract public function register_routes();
+
 	protected function render( $view, $renderData = [], $return = false ) {
 		$viewFile = $this->getViewFile( $view );
 
@@ -32,10 +38,5 @@ class BaseController {
 		} else {
 			throw new Exception( "Can not found view file $file" );
 		}
-	}
-
-	public static function __callStatic( $name, $arguments ) {
-		$name = str_replace( '__', '', $name );
-		app()->make( static::class )->$name( $arguments );
 	}
 }
