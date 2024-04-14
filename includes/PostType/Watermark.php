@@ -27,5 +27,12 @@ class Watermark {
             'single' => true,
             'show_in_rest' => true,
         ] );
+
+        register_meta( Watermark::post_type, 'watermark_product_id', [
+            'type' => 'number',
+            'description' => '投放的商品id',
+            'single' => false,
+            'show_in_rest' => true,
+        ] );
     }
 }
