@@ -3,8 +3,11 @@
 namespace YOU_PLUGIN\PostType;
 
 use YOU_PLUGIN\Controllers\WatermarksController;
+use YOU_PLUGIN\StaticCallAbleTrait;
 
 class Watermark {
+    use StaticCallAbleTrait;
+
     const post_type = 'watermark';
     const post_name = 'Watermark';
 
